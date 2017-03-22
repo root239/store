@@ -1,4 +1,4 @@
-<h1> Advanced Search </h1>
+<h1></h1>
 
 <%= form_for @search, html: {class: "pure-form"} do |s| %>
     
@@ -17,9 +17,29 @@
         <%= s.label :min_price, "Max Price" %>  <%= s.text_field :max_price, size: 10 %>
     </div>
     
-    
     <div class="actions"><%= s.submit "Search", class: "pure-button pure-button-primary" %></div>
     
 <% end %>
+<% if @search.search_stores.empty? %>
+
+    <p>No Records Found</p>
+    
+<% else %>
+
+    <% @search.search_stores.each do |c| %>
+        <br>
+        
+        <div class="div">
+            <h1><%= c.name %></h1>
+            <p>Price: <%= c.price_average %></p>
+            <p>Category: <%= c.category %></p>
+            <p>Source: <%= link_to c.source, c.source %></p>
+            <p>Summary: <%= c.summary %></p>
+        </div>
+
+        
+    <% end %>
+<% end %>
+
 
 <p><%= link_to 'Back', stores_path %></p>
