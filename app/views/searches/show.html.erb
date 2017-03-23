@@ -17,6 +17,7 @@
             <p>Category: <%= c.category %></p>
             <p>Source: <%= link_to c.source, c.source %></p>
             <p>Summary: <%= c.summary %></p>
+            <p><%= image_tag c.image.url(:thumb) %></p>
         </div>
 
         

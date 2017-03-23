@@ -29,6 +29,7 @@
         <td><%= store.price_average %></td>
         <td><%= store.source %></td>
         <td><%= store.summary %></td>
+        <td><%= image_tag store.image.url(:thumb) %></td>
         <td><%= link_to 'Show', store %></td>
         <td><%= link_to 'Edit', edit_store_path(store) %></td>
         <td><%= link_to 'Destroy', store, method: :delete, data: { confirm: 'Are you sure?' } %></td>

@@ -1,5 +1,6 @@
 <p id="notice"><%= notice %></p>
 
+<%= image_tag @store.image.url(:medium) %>
 <p>
   <strong>Name:</strong>
   <%= @store.name %>
@@ -24,6 +25,7 @@
   <strong>Summary:</strong>
   <%= @store.summary %>
 </p>
+
 
 <%= link_to 'Edit', edit_store_path(@store) %> |
 <%= link_to 'Back', stores_path %>
