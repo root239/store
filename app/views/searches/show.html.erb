@@ -2,6 +2,16 @@
 
 <p><%= link_to 'Back', new_search_path %></p>
 
+ <!-- Page Content -->
+    <div class="container">
+
+       
+
+                  
+                </div>
+            </div>
+
+
 <% if @search.search_stores.empty? %>
 
     <p>No Records Found</p>
@@ -10,16 +20,23 @@
 
     <% @search.search_stores.each do |c| %>
         <br>
-        
-        <div class="div">
-            <h1><%= c.name %></h1>
-            <p>Price: <%= c.price_average %></p>
-            <p>Category: <%= c.category %></p>
-            <p>Source: <%= link_to c.source, c.source %></p>
-            <p>Summary: <%= c.summary %></p>
-            <p><%= image_tag c.image.url(:thumb) %></p>
-        </div>
 
-        
-    <% end %>
-<% end %>
+                <div class="row">
+
+                    <div class="col-sm-4 col-lg-4 col-md-4">
+                        <div class="thumbnail">
+                            <%= image_tag c.image.url(:thumb) %>
+                            <div class="caption">
+                                <h4><%= link_to c.name, c.source %></h4>
+                                <h5 class="pull-right">Average Price £<%= c.price_average %></h5>
+                                <h6><%= c.category %></h6>
+                                <div class="ratings">
+                                <p><%= c.summary %></p>
+                                </div>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    <% end %>
+                    <% end %>
+                 </div>
