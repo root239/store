@@ -6,8 +6,11 @@
 <p class= "date">
     <!-- edit and delete method on created a post with time created at -->
     Submitted <%= time_ago_in_words(@post.created_at) %> Ago
+    <% if user_signed_in? %>
+    <!-- only accessable to users signed in -->
     | <%= link_to 'Edit', edit_post_path(@post) %>
     | <%= link_to 'Delete', post_path(@post), method: :delete, data: { confirm: 'Are you sure?' } %>
+    <% end %>
 </p>
 
 <p class= "body">

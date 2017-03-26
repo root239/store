@@ -1,6 +1,7 @@
 <%= form_for @post do |f| %>
     <% if @post.errors.any? %>
         <div id="errors">
+            <!-- if the either field is left empty, return an error -->
             <h2><%= pluralize(@post.errors.count, "error") %> prevented this post from saving</h2>
             <ul>
                 <% @post.errors.full_messages.each do |msg| %>
