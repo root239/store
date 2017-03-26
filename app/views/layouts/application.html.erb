@@ -14,8 +14,9 @@
 		</div>
 		<ul>
 			<li class="category">Website</li>
-			<li><%= link_to "Blog", root_path %></li>
+			<li><%= link_to "Blog", posts_path %></li>
 			<li><%= link_to "Stores", new_search_path %></li>
+			<li><%= link_to "About", about_path %></li>
 		</ul>
 
 		<ul>
@@ -27,14 +28,27 @@
 	</div>
 
 <div id="main_content">
+	
 		<div id="header">
+			<!-- header change depending on the current page -->
+			<% if current_page?(posts_path) %>
 				<p>All Posts</p>
+				<% elsif current_page?(about_path) %>
+				<p>About</p>
+				<% elsif current_page?(new_search_path) %>
+				<p>Store Search</p>
+				<% else %>
+			<!-- link back to post_path page when on blog posts -->
+				<%= link_to "Back to All Posts", posts_path %>
+				<% end %>
+				
 				<div class="buttons">
 					<button class="button"><%= link_to "New Post", new_post_path %></button>
 					<button class="button">Log Out</button>
 				</div>
 		</div>
         
+      <!-- flash button animation on new post -->  
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert") %>
 		<% end %>

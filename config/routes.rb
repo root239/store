@@ -7,5 +7,8 @@ Rails.application.routes.draw do
   end
   resources:searches
   resources:stores
+  
+  get '/about', to: 'pages#about'
+  
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
