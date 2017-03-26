@@ -1,6 +1,8 @@
 <% @posts.each do |post| %>
 	<div class="post_wrapper">
+		<!-- display only title and date stamp and loop, so all posts are displayed that are indexed -->
 		<h2 class="title"><%= link_to post.title, post %></h2>
+		<br>
 		<p class="date"><%= post.created_at.strftime("%B %d, %Y") %></p>
 	</div>
 <% end %>
