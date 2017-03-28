@@ -3,15 +3,20 @@
   <head>
     <title>Clothing</title>
     <%= csrf_meta_tags %>
-
+		
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+    
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    
   </head>
 <body>
 	
   	<div id="sidebar">
 		<div id="logo">
+			<%= link_to new_search_path do %>
+				<%= image_tag "" %>
+			<% end %>
 		</div>
 		<ul>
 			<li class="category">Website</li>

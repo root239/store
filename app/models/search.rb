@@ -1,7 +1,8 @@
 class Search < ApplicationRecord#
 
     def search_stores
-        
+        # added conditions if keywords/category etc are present
+        # compare the input with the search model and return indexed results from stores
         stores = Store.all
         
         stores = stores.where(["name LIKE ?","%#{keywords}%"]) if keywords.present?

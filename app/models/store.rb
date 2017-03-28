@@ -3,6 +3,8 @@ class Store < ApplicationRecord
     validates_attachment_content_type :image, content_type: /\Aimage\/.*\z/
     
     def self.search(search)
+        # no longer being used
+        # simple search that compares name input into search field with store indexes
         if search   
             where(["name LIKE ?","%#{search}%"])
         else

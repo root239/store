@@ -1,22 +1,20 @@
 <html>
 <body>
     <!-- Page Content -->
-    <div class="container">
-
-        <div class="row">
-
+    <div class="container"></div>
+        <div class="row"></div>
             <div class="col-md-3">
                 <p class="lead">Search Stores</p>
                 <div class="list-group">
-                    <%= form_for @search, html: {class: "pure-form"} do |s| %>
-    
+    <%= form_for @search, html: {class: "pure-form"} do |s| %>
+    <!-- search form -->
     <div class="field">
          <%= s.label :keywords %></>
             <%= s.text_field :keywords %>
     </div>
     
     <div class="field">
-        <!-- -->
+        <!-- input for search parameters from model logic -->
         <%= s.label :category %></>
         <%= s.select :category, options_for_select(@categories), :include_blank => true %>
     </div>
@@ -30,8 +28,8 @@
     
 <% end %>
                   
-                </div>
-            </div>
+</div>
+</div>
 
 
 <% if @search.search_stores.empty? %>
@@ -43,7 +41,7 @@
     <% @search.search_stores.each do |c| %>
         <br>
 
-                <div class="row">
+               <!-- <div class="row"> -->
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
@@ -63,24 +61,9 @@
                     <% end %>
                  </div>
                     
-    <!-- /.container -->
+   
 
-    <div class="container">
-
-        <hr>
-
-        <!-- Footer -->
-        <footer>
-            <div class="row">
-                <div class="col-lg-12">
-                    <p>Copyright &copy; Your Website 2014</p>
-                </div>
-            </div>
-        </footer>
-
-    </div>
-    <!-- /.container -->
-
+       
    
 
 </body>

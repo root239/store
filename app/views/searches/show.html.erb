@@ -1,15 +1,5 @@
-<h1></h1>
 
-<p><%= link_to 'Back', new_search_path %></p>
-
- <!-- Page Content -->
     <div class="container">
-
-       
-
-                  
-                </div>
-            </div>
 
 
 <% if @search.search_stores.empty? %>
@@ -21,7 +11,7 @@
     <% @search.search_stores.each do |c| %>
         <br>
 
-                <div class="row">
+               <!-- <div class="row"> -->
 
                     <div class="col-sm-4 col-lg-4 col-md-4">
                         <div class="thumbnail">
@@ -39,4 +29,6 @@
                     </div>
                     <% end %>
                     <% end %>
+                    <p><%= link_to 'Back', new_search_path %></p>
                  </div>
+                
