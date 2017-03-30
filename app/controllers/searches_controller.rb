@@ -3,6 +3,8 @@ class SearchesController < ApplicationController
     def new
         @search = Search.new
         @categories = Store.uniq.pluck(:category)
+        
+        @counter = 1
     end
     # search create with the search parameters input
     def create 

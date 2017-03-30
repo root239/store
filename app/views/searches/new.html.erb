@@ -1,51 +1,23 @@
-<html>
-<body>
+<!--<div class="container">
     <!-- Page Content -->
-    <div class="container"></div>
-        <div class="row"></div>
-            <div class="col-md-3">
-                <p class="lead">Search Stores</p>
-                <div class="list-group">
-    <%= form_for @search, html: {class: "pure-form"} do |s| %>
-    <!-- search form -->
-    <div class="field">
-         <%= s.label :keywords %></>
-            <%= s.text_field :keywords %>
-    </div>
-    
-    <div class="field">
-        <!-- input for search parameters from model logic -->
-        <%= s.label :category %></>
-        <%= s.select :category, options_for_select(@categories), :include_blank => true %>
-    </div>
-    
-    <div class="field">
-        <%= s.label :min_price, "Min Price" %>  <%= s.text_field :min_price, size: 10 %>
-        <%= s.label :min_price, "Max Price" %>  <%= s.text_field :max_price, size: 10 %>
-    </div>
-    
-    <div class="actions"><%= s.submit "Search", class: "pure-button pure-button-primary" %></div>
-    
-<% end %>
-                  
-</div>
-</div>
+    <div class="row">
+        
+     
+        <div class="col-md-8">
+            
+            <% if @search.search_stores.empty? %>
 
-
-<% if @search.search_stores.empty? %>
-
-    <p>No Records Found</p>
-    
-<% else %>
-
-    <% @search.search_stores.each do |c| %>
-        <br>
-
-               <!-- <div class="row"> -->
-
-                    <div class="col-sm-4 col-lg-4 col-md-4">
-                        <div class="thumbnail">
-                            <%= image_tag c.image.url(:thumb) %>
+                <p>No Records Found</p>
+                
+            <% else %>
+            
+            <div class="row">
+                <% @search.search_stores.each do |c| %>
+            
+            
+                <div class="col-md-6">
+                    <div class="thumbnail">
+                            <%= image_tag c.image.url(:medium) %>
                             <div class="caption">
                                 <h4><%= link_to c.name, c.source %></h4>
                                 <h5 class="pull-right">Average Price £<%= c.price_average %></h5>
@@ -56,23 +28,40 @@
                                 
                             </div>
                         </div>
-                    </div>
-                    <% end %>
-                    <% end %>
-                 </div>
-                    
-   
+                </div>
+                
+                <% end %> <!-- end search-->
+            <% end %> <!-- end if statement-->
+            </div>
+            
+            
+            
+        </div> <!-- end col-md-8 -->
+        
+    <div class="col-md-3 search-form">
+            <%= form_for @search, html: {class: "pure-form"} do |s| %>
+            <!-- search form -->
+            <div class="field">
+             <%= s.label :keywords %>
+            <%= s.text_field :keywords %>
+    </div>
+    <div class="field">
+        <!-- input for search parameters from model logic -->
+        <br>
+        <%= s.label :category %></>
+        <%= s.select :category, options_for_select(@categories), :include_blank => true %>
+    </div>
+    <div class="field">
+        <%= s.label :min_price, "Min Price" %>  <%= s.text_field :min_price, size: 10 %>
+        <%= s.label :min_price, "Max Price" %>  <%= s.text_field :max_price, size: 10 %>
+    </div>
+    <br>
+    <div class="actions"><%= s.submit "Search", class: "pure-button pure-button-primary" %></div>
+    
+<% end %>
 
-       
-   
+</div><!--end col-md-4-->
+</div> <!-- end row -->
 
-</body>
-
-</html>
-
-
-
-
-
-
+</div> <!-- end container -->
 <p><%= link_to 'Back', stores_path %></p>

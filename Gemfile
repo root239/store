@@ -7,8 +7,9 @@ end
 source 'https://rails-assets.org' do
   gem 'rails-assets-tether', '>= 1.3.3'
 end
+
 gem 'devise'
-gem 'bootstrap'
+gem 'bootstrap', '~> 4.0.0.alpha6' 
 gem 'paperclip'
 gem 'aws-sdk', '~> 2.3'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'

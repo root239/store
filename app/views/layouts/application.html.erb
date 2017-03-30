@@ -5,7 +5,7 @@
     <%= csrf_meta_tags %>
 		
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= stylesheet_link_tag 'application', 'http://fonts.googleapis.com/css?family=Raleway:400,700' %>
+    <%= stylesheet_link_tag 'application' %>
     
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     
@@ -15,13 +15,14 @@
   	<div id="sidebar">
 		<div id="logo">
 			<%= link_to new_search_path do %>
-				<%= image_tag "" %>
+					<%= image_tag "" %>
 			<% end %>
 		</div>
 		<ul>
-			<li class="category">Website</li>
+			<li class="category">Clothing-Rack</li>
+			<li><%= link_to "Boutiques", new_search_path %></li>
+			<li>Independent Labels</li>
 			<li><%= link_to "Blog", posts_path %></li>
-			<li><%= link_to "Stores", new_search_path %></li>
 			<li><%= link_to "About", about_path %></li>
 			<!-- Does not appear when user is signed in -->
 			<% if !user_signed_in? %>
@@ -32,7 +33,7 @@
 		</ul>
 
 		<ul>
-			<li class="category">Other Blogs</li>
+			<li class="category">Other Things</li>
 			<li><a href="http://gwarizm.com/">Sportstwear</a></li>
 			<li><a href="https://marketplace.asos.com/boutique/poorboy/blog">Vintage</a></li>
 		</ul>
