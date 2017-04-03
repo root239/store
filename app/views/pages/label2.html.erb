@@ -1,0 +1,16 @@
+<div class="row">
+    <!-- calls in arrays with images and text from web scrape -->
+  <% @label.each do |image| %>
+  <% @title.each do |t| %>
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <div class="caption">
+            <%= image_tag image %>
+            <%= link_to t, "https://marketplace.asos.com/boutique/sisterhood" %>
+            <!-- tester link -->
+            </div>
+        </div>
+    </div>
+<% end %>
+<% end %>
+</div>

@@ -1,6 +1,7 @@
 class PostsController < ApplicationController
     # Might use this if need strict permissions -  before_action :authenticate_user!, except: [:user, :show]
     # posts are ordered in descending order
+    
     def index
         @posts = Post.all.order('created_at DESC')
     end

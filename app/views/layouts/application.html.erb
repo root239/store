@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Clothing</title>
+    <title>Clothing-rack</title>
     <%= csrf_meta_tags %>
 		
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -21,7 +21,7 @@
 		<ul>
 			<li class="category">Clothing-Rack</li>
 			<li><%= link_to "Boutique Search", new_search_path %></li>
-			<li>Independent Labels</li>
+			<li><%= link_to "Independent Labels", label_path %></li>
 			<li><%= link_to "Blog", posts_path %></li>
 			<li><%= link_to "About", about_path %></li>
 			<!-- Does not appear when user is signed in -->
@@ -52,6 +52,8 @@
 				<p>About</p>
 				<% elsif current_page?(new_search_path) %>
 				<p>Boutique Search</p>
+				<% elsif current_page?(label_path) %>
+				<p>Independent Labels</p>
 				<% else %>
 			<!-- link back to post_path page when on blog posts -->
 				<%= link_to "Back to All Posts", posts_path %>
