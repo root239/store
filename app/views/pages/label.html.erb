@@ -1,1 +1,65 @@
-hello
+<!-- images scraped from web page and saved in vendor/images then moved to assets
+    this was an alternative as my other web scraper cannot run with Heroku
+    this is more of an illustration of what would have been
+    
+    imagescrape.rb is what was used to scrape these images
+    
+    with label2.html.erb - pages.controller and scrape2.rb housing the proper method
+    that would have been utilised with arrays and loops -->
+<div class="row">
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <%= image_tag "wwyf.jpg" %>
+            <h4><%= link_to "WWYF", "https://marketplace.asos.com/boutique/wwyf" %></h4>
+        </div>
+    </div>
+     <div class="col-md-4">
+        <div class="thumbnail">
+            <%= image_tag "cosmic.jpeg"%>
+            <h4><%= link_to "Cosmic Saint","https://marketplace.asos.com/boutique/cosmicsaint" %></h4>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <%= image_tag "duet.jpg" %>
+            <h4><%= link_to "Duet", "https://marketplace.asos.com/boutique/duet" %></h4>
+        </div>
+    </div>
+     <div class="col-md-4">
+        <div class="thumbnail">
+            <%= image_tag "lovers.jpg" %>
+            <h4><%= link_to "Ganga Shop", "https://marketplace.asos.com/boutique/ganga-shop" %></h4>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+            <%= image_tag "rq.jpg" %>
+            <h4><%= link_to "R.Q.S.T", "https://marketplace.asos.com/boutique/rqst" %></h4>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <%= image_tag "flo.jpg" %>
+            <h4><%= link_to "Flo", "https://marketplace.asos.com/boutique/flo-atelier" %></h4>
+        </div>
+    </div>
+      <div class="col-md-4">
+        <div class="thumbnail">
+            <%= image_tag "tung.jpg" %>
+            <h4><%= link_to "Tung", "https://marketplace.asos.com/boutique/tung" %></h4>
+        </div>
+    </div>
+    <div class="col-md-4">
+        <div class="thumbnail">
+            <%= image_tag "black.jpg" %>
+            <h4><%= link_to "BLVCK", "https://marketplace.asos.com/boutique/blvck-clothing" %></h4>
+        </div>
+    </div>
+     <div class="col-md-4">
+        <div class="thumbnail">
+            <%= image_tag "lily.jpg" %>
+            <h4><%= link_to "Lily and the Lamplight", "https://marketplace.asos.com/boutique/lily-and-the-lamplight" %></h4>
+        </div>
+    </div>
+    
+ </div>

@@ -3,7 +3,6 @@
     <% @search.search_stores.each do |c| %>
         <div class="col-md-4">
             <div class="thumbnail">
-                <%= image_tag c.image.url(:medium) %>
                 <div class="caption">
                     <h4><%= link_to c.name, c.source %></h4>
                     <h5 class="pull-right">Average Price £<%= c.price_average %></h5>
