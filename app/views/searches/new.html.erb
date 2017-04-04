@@ -1,25 +1,25 @@
 <!--<div class="container">
     <!-- Page Content -->
     <div class="row">
-        
-     
         <div class="col-md-8">
-            
             <% if @search.search_stores.empty? %>
 
                 <p>No Records Found</p>
                 
             <% else %>
-            
             <div class="row">
                 <% @search.search_stores.each do |c| %>
             
             
                 <div class="col-md-6">
                     <div class="thumbnail">
+                        <%= link_to c.source, target: :_blank do %>
                             <%= image_tag c.image.url(:medium) %>
+                            <% end %>
                             <div class="caption">
-                                <h4><%= link_to c.name, c.source %></h4>
+                                <%= link_to c.source, target: :_blank do %>
+                                <h4><%= c.name %></h4>
+                                <% end %>
                                 <h5 class="pull-right">Average Price £<%= c.price_average %></h5>
                                 <h6><%= c.category %></h6>
                                 <div class="ratings">
