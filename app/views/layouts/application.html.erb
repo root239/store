@@ -34,9 +34,9 @@
 
 		<ul>
 			<li class="category">Other Links</li>
-			<li><a href="http://gwarizm.com/">Sportstwear</a></li>
-			<li><a href="http://www.rokit.co.uk/blog">Vintage</a></li>
-			<li><a href="http://agoraclothing.com/blog/">Streetwear</a></li>
+			<li><%= link_to "Sportstwear","http://gwarizm.com/", target: :_blank %></li>
+			<li><%= link_to "Vintage","http://www.rokit.co.uk/blog", target: :_blank %></li>
+			<li><%= link_to "Streetwear","http://agoraclothing.com/blog/", target: :_blank %></li> 
 		</ul>
 		<% if user_signed_in? %>
 			<p class="sign_in">Admin</p>
