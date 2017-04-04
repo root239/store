@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   
   devise_for :users
-  root'stores#index'
+  root'searches#new'
   
   resources:posts do
     resources:comments
