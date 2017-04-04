@@ -53,10 +53,12 @@
 				<p>About</p>
 				<% elsif current_page?(new_search_path) %>
 				<p>Boutique Search</p>
+				<% elsif current_page? (root_path) %>
+				<p>Boutique Search</p>
 				<% elsif current_page?(label_path) %>
 				<p>Independent Labels</p>
 				<% else %>
-			<!-- link back to post_path page when on blog posts -->
+			<!-- link back to boutique search when on show page -->
 				<%= link_to "Back to Boutique Search", new_search_path %>
 				<% end %>
 				
